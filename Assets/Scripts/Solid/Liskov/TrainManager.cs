@@ -1,14 +1,15 @@
 
 using UnityEngine;
-namespace Solid.SingleResponsibility
+namespace Solid.Liskov
 {
-    [RequireComponent(typeof(PlayerAudio), typeof(PlayerInput), typeof(PlayerMovement))]
-    public class Player : MonoBehaviour
+    public class TrainManager : MonoBehaviour
     {
+        private RailVehicle _railVehicle;
         // Start is called before the first frame update
         void Start()
         {
-
+            _railVehicle.Speed = 2;
+            _railVehicle.GoForward();
         }
 
         // Update is called once per frame
@@ -18,4 +19,3 @@ namespace Solid.SingleResponsibility
         }
     }
 }
-
